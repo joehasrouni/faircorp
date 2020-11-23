@@ -1,0 +1,23 @@
+com/emse/spring/faircorp/hello/GreetingService.java
+ com.emse.spring.faircorp.hello.GreetingService
+com/emse/spring/faircorp/hello/ConsoleGreetingService.java
+ com.emse.spring.faircorp.hello.ConsoleGreetingService
+com/emse/spring/faircorp/FaircorpApplicationConfig.java
+ com.emse.spring.faircorp.FaircorpApplicationConfig
+ com.emse.spring.faircorp.FaircorpApplicationConfig$1
+com/emse/spring/faircorp/hello/UserService.java
+ com.emse.spring.faircorp.hello.UserService
+com/emse/spring/faircorp/FaircorpApplication.java
+ com.emse.spring.faircorp.FaircorpApplication
+com/emse/spring/faircorp/hello/DummyUserService.java
+ com.emse.spring.faircorp.hello.DummyUserService
+com/emse/spring/faircorp/model/HeaterStatus.java
+ com.emse.spring.faircorp.model.HeaterStatus
+com/emse/spring/faircorp/model/WindowStatus.java
+ com.emse.spring.faircorp.model.WindowStatus
+com/emse/spring/faircorp/model/Room.java
+ com.emse.spring.faircorp.model.Room
+com/emse/spring/faircorp/model/Heater.java
+ com.emse.spring.faircorp.model.Heater
+com/emse/spring/faircorp/model/Window.java
+ com.emse.spring.faircorp.model.Window

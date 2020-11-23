@@ -11,7 +11,7 @@ class GreetingServiceTest {
 
     @Test
     public void testGreeting(CapturedOutput output) {
-        GreetingService greetingService = new ConsoleGreetingService(); // (2)
+        GreetingService greetingService = new ConsoleGreetingService(); //
         greetingService.greet("Spring");
         Assertions.assertThat(output.getAll()).contains("Hello, Spring!");
     }

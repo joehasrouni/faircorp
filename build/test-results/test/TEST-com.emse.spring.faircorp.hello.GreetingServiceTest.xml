@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.emse.spring.faircorp.hello.GreetingServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-23T10:17:54" hostname="LENOVO-PC" time="0.002">
+  <properties/>
+  <testcase name="testGreeting(CapturedOutput)" classname="com.emse.spring.faircorp.hello.GreetingServiceTest" time="0.002"/>
+  <system-out><![CDATA[Hello, Spring!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

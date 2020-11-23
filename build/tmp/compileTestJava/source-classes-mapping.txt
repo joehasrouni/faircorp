@@ -1,0 +1,7 @@
+com/emse/spring/faircorp/FaircorpApplicationTests.java
+ com.emse.spring.faircorp.FaircorpApplicationTests
+com/emse/spring/faircorp/hello/GreetingServiceTest.java
+ com.emse.spring.faircorp.hello.GreetingServiceTest
+com/emse/spring/faircorp/hello/DummyUserServiceTest.java
+ com.emse.spring.faircorp.hello.DummyUserServiceTest
+ com.emse.spring.faircorp.hello.DummyUserServiceTest$DummyUserServiceTestConfig
