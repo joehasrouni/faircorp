@@ -42,11 +42,11 @@ com/emse/spring/faircorp/dao/RoomDao.java
  com.emse.spring.faircorp.dao.RoomDao
 com/emse/spring/faircorp/model/Window.java
  com.emse.spring.faircorp.model.Window
-com/emse/spring/faircorp/api/RoomDto.java
- com.emse.spring.faircorp.api.RoomDto
-com/emse/spring/faircorp/dao/WindowDao.java
- com.emse.spring.faircorp.dao.WindowDao
 com/emse/spring/faircorp/api/HeaterController.java
  com.emse.spring.faircorp.api.HeaterController
+com/emse/spring/faircorp/dao/WindowDao.java
+ com.emse.spring.faircorp.dao.WindowDao
 com/emse/spring/faircorp/api/RoomController.java
  com.emse.spring.faircorp.api.RoomController
+com/emse/spring/faircorp/api/RoomDto.java
+ com.emse.spring.faircorp.api.RoomDto
