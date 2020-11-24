@@ -1,5 +1,6 @@
 package com.emse.spring.faircorp;
 
+import com.emse.spring.faircorp.dao.WindowDao;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

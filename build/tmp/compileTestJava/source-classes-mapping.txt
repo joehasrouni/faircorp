@@ -5,3 +5,5 @@ com/emse/spring/faircorp/hello/GreetingServiceTest.java
 com/emse/spring/faircorp/hello/DummyUserServiceTest.java
  com.emse.spring.faircorp.hello.DummyUserServiceTest
  com.emse.spring.faircorp.hello.DummyUserServiceTest$DummyUserServiceTestConfig
+com/emse/spring/faircorp/dao/WindowDaoTest.java
+ com.emse.spring.faircorp.dao.WindowDaoTest
