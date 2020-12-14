@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/windows")
 @Transactional
 public class WindowController {
@@ -28,12 +29,12 @@ public class WindowController {
         return windowDao.findAll().stream().map(WindowDto::new).collect(Collectors.toList());
     }
 
-    @GetMapping(path = "/{id}")
+    @GetMapping(path = "/{window_id}")
     public WindowDto findById(@PathVariable Long id) {
         return windowDao.findById(id).map(WindowDto::new).orElse(null);
     }
 
-    @PutMapping(path = "/{id}/switch")
+    @PutMapping(path = "/{window_id}/switch")
     public WindowDto switchStatus(@PathVariable Long id) {
         Window window = windowDao.findById(id).orElseThrow(IllegalArgumentException::new);
         window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED: WindowStatus.OPEN);
@@ -56,7 +57,7 @@ public class WindowController {
         return new WindowDto(window);
     }
 
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping(path = "/{window_id}")
     public void delete(@PathVariable Long id) {
         windowDao.deleteById(id);
     }
