@@ -18,6 +18,11 @@ public class Building {
     @OneToMany(mappedBy = "building")
     private List<Room> rooms;
 
+    public Building(){
+
+
+    }
+
     public Building(String name) {
         this.name = name;
     }
