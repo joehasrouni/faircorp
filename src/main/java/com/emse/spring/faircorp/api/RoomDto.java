@@ -28,8 +28,8 @@ public class RoomDto {
         this.floor = room.getFloor();
         this.currentTemperature = room.getCurrentTemperature();
         this.targetTemperature = room.getTargetTemperature();
-        this.windows = room.getWindows().stream().map(WindowDto::new).collect(Collectors.toList());
-        this.heaters = room.getHeaters().stream().map(HeaterDto::new).collect(Collectors.toList());;
+      //  this.windows = room.getWindows().stream().map(WindowDto::new).collect(Collectors.toList());
+      //  this.heaters = room.getHeaters().stream().map(HeaterDto::new).collect(Collectors.toList());;
         this.buildingId=room.getBuilding().getId();
     }
 

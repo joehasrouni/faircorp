@@ -29,12 +29,12 @@ public class WindowController {
         return windowDao.findAll().stream().map(WindowDto::new).collect(Collectors.toList());
     }
 
-    @GetMapping(path = "/{window_id}")
+    @GetMapping(path = "/{id}")
     public WindowDto findById(@PathVariable Long id) {
         return windowDao.findById(id).map(WindowDto::new).orElse(null);
     }
 
-    @PutMapping(path = "/{window_id}/switch")
+    @PutMapping(path = "/{id}/switch")
     public WindowDto switchStatus(@PathVariable Long id) {
         Window window = windowDao.findById(id).orElseThrow(IllegalArgumentException::new);
         window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED: WindowStatus.OPEN);
@@ -57,7 +57,7 @@ public class WindowController {
         return new WindowDto(window);
     }
 
-    @DeleteMapping(path = "/{window_id}")
+    @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         windowDao.deleteById(id);
     }

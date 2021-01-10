@@ -39,12 +39,12 @@ public class BuildingController {
         return new BuildingDto(building);
     }
 
-    @GetMapping(path = "/{building_id}")
+    @GetMapping(path = "/{id}")
     public BuildingDto findById(@PathVariable Long id) {
         return buildingDao.findById(id).map(BuildingDto::new).orElse(null);
     }
 
-    @DeleteMapping(path = "/{building_id}")
+    @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         buildingDao.deleteById(id);
     }

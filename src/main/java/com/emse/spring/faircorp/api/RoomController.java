@@ -28,7 +28,7 @@ public class RoomController {
         return roomDao.findAll().stream().map(RoomDto::new).collect(Collectors.toList());
     }
 
-    @GetMapping(path = "/{room_id}")
+    @GetMapping(path = "/{id}")
     public RoomDto findById(@PathVariable Long id) {
         return roomDao.findById(id).map(RoomDto::new).orElse(null);
     }
@@ -38,17 +38,17 @@ public class RoomController {
 
         Room room = null;
         Building building = buildingDao.getOne(dto.getBuildingId());
-        room = roomDao.save(new Room(dto.getFloor(), dto.getName(),building));
+        room = roomDao.save(new Room(building, dto.getName(),dto.getFloor(), dto.getCurrentTemperature(), dto.getTargetTemperature()));
 
         return new RoomDto(room);
     }
 
-    @DeleteMapping(path = "/{room_id}")
+    @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         roomDao.deleteById(id);
     }
 
-    @PutMapping(path = "/{room_id}/switchWindow")
+    @PutMapping(path = "/{id}/switchWindow")
     public RoomDto switchWindowStatus(@PathVariable Long id)
     {
         Room room = roomDao.findById(id).orElseThrow(IllegalArgumentException::new);
@@ -60,7 +60,7 @@ public class RoomController {
         return new RoomDto(room);
     }
 
-    @PutMapping(path = "/{room_id}/switchHeaters")
+    @PutMapping(path = "/{id}/switchHeaters")
     public RoomDto switchHeaterStatus(@PathVariable Long id)
     {
         Room room = roomDao.findById(id).orElseThrow(IllegalArgumentException::new);

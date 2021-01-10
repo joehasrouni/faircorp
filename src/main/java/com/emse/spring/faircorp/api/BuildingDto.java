@@ -16,7 +16,7 @@ public class BuildingDto {
     public BuildingDto(Building building) {
         this.id = building.getId();
         this.name = building.getName();
-        this.rooms = building.getRooms().stream().map(RoomDto::new).collect(Collectors.toList());
+      //  this.rooms = building.getRooms().stream().map(RoomDto::new).collect(Collectors.toList());
     }
 
     public long getId() {
