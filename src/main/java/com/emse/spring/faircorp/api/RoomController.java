@@ -60,6 +60,16 @@ public class RoomController {
         return new RoomDto(room);
     }
 
+    @PutMapping(path="/{id}")
+    public RoomDto updateTargetTemperature(@PathVariable Long id , RoomDto room)
+    {
+        Room original = roomDao.findById(id).orElseThrow(IllegalArgumentException::new);
+
+        original.setTargetTemperature(room.getTargetTemperature());
+
+        return new RoomDto(original);
+    }
+
     @PutMapping(path = "/{id}/switchHeaters")
     public RoomDto switchHeaterStatus(@PathVariable Long id)
     {
