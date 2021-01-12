@@ -57,7 +57,7 @@ public class RoomController {
             window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED : WindowStatus.OPEN);
         }
 
-        return new RoomDto(room);
+        return new RoomDto(room) ;
     }
 
     @PutMapping(path="/{id}")
