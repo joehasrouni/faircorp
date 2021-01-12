@@ -61,7 +61,7 @@ public class RoomController {
     }
 
     @PutMapping(path="/{id}")
-    public RoomDto updateTargetTemperature(@PathVariable Long id , RoomDto room)
+    public RoomDto updateTargetTemperature(@PathVariable("id") Long id , RoomDto room)
     {
         Room original = roomDao.findById(id).orElseThrow(IllegalArgumentException::new);
 
