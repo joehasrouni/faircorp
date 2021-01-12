@@ -12,7 +12,7 @@ public class Room {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private Integer floor;
 
     @Column(nullable = false)
