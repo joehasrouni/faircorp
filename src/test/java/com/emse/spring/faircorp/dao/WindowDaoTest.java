@@ -10,9 +10,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
@@ -22,13 +25,15 @@ class WindowDaoTest {
     @Autowired
     private RoomDao roomDao;
 
+    //should find a window, here for example we should get window1
     @Test
     public void shouldFindAWindow() {
         Window window = windowDao.getOne(-10L);
-        Assertions.assertThat(window.getName()).isEqualTo("Window 1");
+        Assertions.assertThat(window.getName()).isEqualTo("Main Window");
         Assertions.assertThat(window.getWindowStatus()).isEqualTo(WindowStatus.CLOSED);
     }
 
+    //should find a window
     @Test
     public void shouldFindRoomOpenWindows() {
         List<Window> result = windowDao.findRoomOpenWindows(-9L);
@@ -44,6 +49,7 @@ class WindowDaoTest {
         Assertions.assertThat(result).isEmpty();
     }
 
+    //should delete windows in a room
     @Test
     public void shouldDeleteWindowsRoom() {
         Optional<Room> room = roomDao.findById(-10L);

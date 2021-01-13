@@ -1,8 +1,6 @@
 package com.emse.spring.faircorp.dao;
 
 import com.emse.spring.faircorp.model.Room;
-import com.emse.spring.faircorp.model.Window;
-import com.emse.spring.faircorp.model.WindowStatus;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,6 +14,7 @@ public class RoomDaoTest {
     @Autowired
     private RoomDao roomDao;
 
+    //should find a room entity based on its name
     @Test
     public void shouldFindARoomByName() {
         Room room = roomDao.findByName("Room1");

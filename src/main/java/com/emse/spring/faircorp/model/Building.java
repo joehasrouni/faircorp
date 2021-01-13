@@ -4,6 +4,8 @@ package com.emse.spring.faircorp.model;
 import javax.persistence.*;
 import java.util.List;
 
+//Entity class  for Building
+
 @Entity
 @Table(name = "BUILDING")
 public class Building {
@@ -18,7 +20,7 @@ public class Building {
     @OneToMany(mappedBy = "building")
     private List<Room> rooms;
 
-    public Building(){
+    public Building() {
 
 
     }

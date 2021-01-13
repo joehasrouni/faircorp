@@ -1,13 +1,10 @@
 package com.emse.spring.faircorp.api;
 
-import com.emse.spring.faircorp.model.Building;
-import com.emse.spring.faircorp.model.Heater;
 import com.emse.spring.faircorp.model.Room;
-import com.emse.spring.faircorp.model.Window;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
+//Room DTO class
 
 public class RoomDto {
     private Long id;
@@ -28,9 +25,9 @@ public class RoomDto {
         this.floor = room.getFloor();
         this.currentTemperature = room.getCurrentTemperature();
         this.targetTemperature = room.getTargetTemperature();
-      //  this.windows = room.getWindows().stream().map(WindowDto::new).collect(Collectors.toList());
-      //  this.heaters = room.getHeaters().stream().map(HeaterDto::new).collect(Collectors.toList());;
-        this.buildingId=room.getBuilding().getId();
+        //  this.windows = room.getWindows().stream().map(WindowDto::new).collect(Collectors.toList());
+        //  this.heaters = room.getHeaters().stream().map(HeaterDto::new).collect(Collectors.toList());;
+        this.buildingId = room.getBuilding().getId();
     }
 
     public Long getId() {

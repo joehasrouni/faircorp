@@ -1,16 +1,14 @@
 package com.emse.spring.faircorp.api;
 
 import com.emse.spring.faircorp.dao.BuildingDao;
-import com.emse.spring.faircorp.dao.RoomDao;
-import com.emse.spring.faircorp.dao.WindowDao;
 import com.emse.spring.faircorp.model.Building;
-import com.emse.spring.faircorp.model.Room;
-import com.emse.spring.faircorp.model.Window;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
+
+//Building Controller for REST Services
 
 @RestController
 @CrossOrigin
@@ -20,15 +18,17 @@ public class BuildingController {
 
     private final BuildingDao buildingDao;
 
-    public BuildingController( BuildingDao buildingDao ) {
+    public BuildingController(BuildingDao buildingDao) {
         this.buildingDao = buildingDao;
     }
 
+    //Get all buildings
     @GetMapping
     public List<BuildingDto> findAll() {
         return buildingDao.findAll().stream().map(BuildingDto::new).collect(Collectors.toList());
     }
 
+    //Create a building
     @PostMapping
     public BuildingDto create(@RequestBody BuildingDto dto) {
 
@@ -39,11 +39,13 @@ public class BuildingController {
         return new BuildingDto(building);
     }
 
+    //Get a building by id
     @GetMapping(path = "/{id}")
     public BuildingDto findById(@PathVariable Long id) {
         return buildingDao.findById(id).map(BuildingDto::new).orElse(null);
     }
 
+    //Delete a building
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         buildingDao.deleteById(id);

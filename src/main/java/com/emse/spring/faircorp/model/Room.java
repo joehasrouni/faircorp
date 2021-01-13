@@ -2,7 +2,9 @@ package com.emse.spring.faircorp.model;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
+
+
+//Entity class for Room
 
 @Entity
 @Table(name = "ROOM")
@@ -39,15 +41,15 @@ public class Room {
     public Room(Building building, String name, Integer floor) {
         this.floor = floor;
         this.name = name;
-        this.building=building;
+        this.building = building;
     }
 
-    public Room(Building building, String name, Integer floor , Double currentTemperature , Double targetTemperature) {
+    public Room(Building building, String name, Integer floor, Double currentTemperature, Double targetTemperature) {
         this.floor = floor;
         this.name = name;
-        this.building=building;
-        this.currentTemperature=currentTemperature;
-        this.targetTemperature=targetTemperature;
+        this.building = building;
+        this.currentTemperature = currentTemperature;
+        this.targetTemperature = targetTemperature;
     }
 
     public Long getId() {

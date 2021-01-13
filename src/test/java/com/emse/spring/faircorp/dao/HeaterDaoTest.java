@@ -2,7 +2,6 @@ package com.emse.spring.faircorp.dao;
 
 import com.emse.spring.faircorp.model.Heater;
 import com.emse.spring.faircorp.model.Room;
-import com.emse.spring.faircorp.model.Window;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,8 +21,10 @@ public class HeaterDaoTest {
     @Autowired
     private RoomDao roomDao;
 
+    //should delete heaters in a room
+    //here for example Room1 should be empty after executing the function
     @Test
-    public void shouldDeleteWindowsRoom() {
+    public void shouldDeleteHeatersRoom() {
         Optional<Room> room = roomDao.findById(-10L);
         Assertions.assertThat(room.get().getHeaters().size()).isEqualTo(2);
 

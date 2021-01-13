@@ -6,9 +6,12 @@ import com.emse.spring.faircorp.model.Room;
 import com.emse.spring.faircorp.model.Window;
 import com.emse.spring.faircorp.model.WindowStatus;
 import org.springframework.web.bind.annotation.*;
+
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
+
+//Window Controller for REST services
 
 @RestController
 @CrossOrigin
@@ -24,23 +27,27 @@ public class WindowController {
         this.roomDao = roomDao;
     }
 
-    @GetMapping // (5)
+    //Get all windows
+    @GetMapping
     public List<WindowDto> findAll() {
         return windowDao.findAll().stream().map(WindowDto::new).collect(Collectors.toList());
     }
 
+    //Get specified window by id
     @GetMapping(path = "/{id}")
     public WindowDto findById(@PathVariable Long id) {
         return windowDao.findById(id).map(WindowDto::new).orElse(null);
     }
 
+    //Switch the status of the window
     @PutMapping(path = "/{id}/switch")
     public WindowDto switchStatus(@PathVariable Long id) {
         Window window = windowDao.findById(id).orElseThrow(IllegalArgumentException::new);
-        window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED: WindowStatus.OPEN);
+        window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED : WindowStatus.OPEN);
         return new WindowDto(window);
     }
 
+    //Create new window
     @PostMapping
     public WindowDto create(@RequestBody WindowDto dto) {
 
@@ -49,14 +56,14 @@ public class WindowController {
 
         if (dto.getId() == null) {
             window = windowDao.save(new Window(dto.getName(), dto.getWindowStatus(), room));
-        }
-        else {
+        } else {
             window = windowDao.getOne(dto.getId());
             window.setWindowStatus(dto.getWindowStatus());
         }
         return new WindowDto(window);
     }
 
+    //Delete window
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         windowDao.deleteById(id);
